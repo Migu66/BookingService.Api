@@ -1,4 +1,6 @@
 using BookingService.Api.Core.Application.Features.Resources.DTOs;
+using BookingService.Api.Core.Application.Features.Resources.Commands;
+using BookingService.Api.Core.Application.Features.Resources.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

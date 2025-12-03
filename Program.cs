@@ -32,7 +32,7 @@ try
 
     // Database
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
-  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
     // AutoMapper
     builder.Services.AddAutoMapper(typeof(MappingProfile));
@@ -101,18 +101,18 @@ try
 
         options.AddSecurityRequirement(new OpenApiSecurityRequirement
         {
-            {
+           {
            new OpenApiSecurityScheme
- {
-      Reference = new OpenApiReference
-      {
-         Type = ReferenceType.SecurityScheme,
-   Id = "Bearer"
-       }
-      },
-    Array.Empty<string>()
-            }
-   });
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                Array.Empty<string>()
+           }
+        });
     });
 
     var app = builder.Build();
@@ -130,7 +130,11 @@ try
               });
     }
 
-    app.UseHttpsRedirection();
+    // Only redirect to HTTPS in production (Docker development uses HTTP)
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseHttpsRedirection();
+    }
 
     app.UseSerilogRequestLogging();
 

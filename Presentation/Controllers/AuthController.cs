@@ -1,3 +1,4 @@
+using BookingService.Api.Core.Application.Features.Auth.Commands;
 using BookingService.Api.Core.Application.Features.Auth.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

@@ -14,7 +14,7 @@ public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage("Email is required")
             .EmailAddress().WithMessage("Invalid email format")
-   .MaximumLength(100).WithMessage("Email must not exceed 100 characters");
+            .MaximumLength(100).WithMessage("Email must not exceed 100 characters");
 
         RuleFor(x => x.Password)
               .NotEmpty().WithMessage("Password is required")
@@ -28,9 +28,9 @@ public class LoginRequestValidator : AbstractValidator<LoginRequest>
     {
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage("Email is required")
-                  .EmailAddress().WithMessage("Invalid email format");
+                .EmailAddress().WithMessage("Invalid email format");
 
         RuleFor(x => x.Password)
-  .NotEmpty().WithMessage("Password is required");
+            .NotEmpty().WithMessage("Password is required");
     }
 }

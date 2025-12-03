@@ -1,5 +1,7 @@
 using System.Security.Claims;
+using BookingService.Api.Core.Application.Features.Reservations.Commands;
 using BookingService.Api.Core.Application.Features.Reservations.DTOs;
+using BookingService.Api.Core.Application.Features.Reservations.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

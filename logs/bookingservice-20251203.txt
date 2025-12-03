@@ -1,0 +1,100 @@
+2025-12-03 10:48:03.530 +01:00 [INF] Starting BookingService API
+2025-12-03 10:48:03.793 +01:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\Miguel\source\repos\BookingService.Api\BookingService.Api\Program.cs:line 118
+2025-12-03 10:48:09.218 +01:00 [INF] Starting BookingService API
+2025-12-03 10:48:09.368 +01:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\Miguel\source\repos\BookingService.Api\BookingService.Api\Program.cs:line 118
+2025-12-03 10:01:53.181 +00:00 [INF] Starting BookingService API
+2025-12-03 10:01:54.072 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-12-03 10:01:54.074 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-12-03 10:01:54.085 +00:00 [INF] Creating key {6bebb51b-9d39-4dce-af3b-c5ddc42aafaa} with creation date 2025-12-03 10:01:54Z, activation date 2025-12-03 10:01:54Z, and expiration date 2026-03-03 10:01:54Z.
+2025-12-03 10:01:54.149 +00:00 [WRN] No XML encryptor configured. Key {6bebb51b-9d39-4dce-af3b-c5ddc42aafaa} may be persisted to storage in unencrypted form.
+2025-12-03 10:01:54.575 +00:00 [INF] Now listening on: http://[::]:8080
+2025-12-03 10:01:54.575 +00:00 [INF] Now listening on: https://[::]:8081
+2025-12-03 10:01:54.577 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 10:01:54.578 +00:00 [INF] Hosting environment: Development
+2025-12-03 10:01:54.578 +00:00 [INF] Content root path: /app
+2025-12-03 10:01:55.482 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger - null null
+2025-12-03 10:01:55.632 +00:00 [INF] HTTP GET /swagger responded 404 in 122.0481 ms
+2025-12-03 10:01:55.636 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger - 404 0 null 155.1564ms
+2025-12-03 10:01:55.641 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:32769/swagger, Response status code: 404
+2025-12-03 10:03:37.726 +00:00 [INF] Starting BookingService API
+2025-12-03 10:03:38.541 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-12-03 10:03:38.542 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-12-03 10:03:38.552 +00:00 [INF] Creating key {9b841f68-23a8-401d-822e-ba9b43a774f3} with creation date 2025-12-03 10:03:38Z, activation date 2025-12-03 10:03:38Z, and expiration date 2026-03-03 10:03:38Z.
+2025-12-03 10:03:38.626 +00:00 [WRN] No XML encryptor configured. Key {9b841f68-23a8-401d-822e-ba9b43a774f3} may be persisted to storage in unencrypted form.
+2025-12-03 10:03:39.022 +00:00 [INF] Now listening on: http://[::]:8080
+2025-12-03 10:03:39.023 +00:00 [INF] Now listening on: https://[::]:8081
+2025-12-03 10:03:39.024 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 10:03:39.025 +00:00 [INF] Hosting environment: Development
+2025-12-03 10:03:39.026 +00:00 [INF] Content root path: /app
+2025-12-03 10:03:39.636 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger - null null
+2025-12-03 10:03:39.774 +00:00 [INF] HTTP GET /swagger responded 404 in 106.9852 ms
+2025-12-03 10:03:39.779 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger - 404 0 null 142.8933ms
+2025-12-03 10:03:39.784 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:32769/swagger, Response status code: 404
+2025-12-03 10:05:11.240 +00:00 [INF] Starting BookingService API
+2025-12-03 10:05:11.880 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-12-03 10:05:11.882 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-12-03 10:05:11.892 +00:00 [INF] Creating key {d3b3fa0b-e0b5-44c7-a56d-fd39641a0be9} with creation date 2025-12-03 10:05:11Z, activation date 2025-12-03 10:05:11Z, and expiration date 2026-03-03 10:05:11Z.
+2025-12-03 10:05:11.909 +00:00 [WRN] No XML encryptor configured. Key {d3b3fa0b-e0b5-44c7-a56d-fd39641a0be9} may be persisted to storage in unencrypted form.
+2025-12-03 10:05:12.170 +00:00 [INF] Now listening on: http://[::]:8080
+2025-12-03 10:05:12.170 +00:00 [INF] Now listening on: https://[::]:8081
+2025-12-03 10:05:12.172 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 10:05:12.173 +00:00 [INF] Hosting environment: Development
+2025-12-03 10:05:12.174 +00:00 [INF] Content root path: /app
+2025-12-03 10:05:12.782 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger - null null
+2025-12-03 10:05:12.907 +00:00 [INF] HTTP GET /swagger responded 404 in 94.9868 ms
+2025-12-03 10:05:12.910 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger - 404 0 null 128.7476ms
+2025-12-03 10:05:12.915 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:32769/swagger, Response status code: 404
+2025-12-03 10:08:36.798 +00:00 [INF] Starting BookingService API
+2025-12-03 10:08:37.432 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-12-03 10:08:37.434 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-12-03 10:08:37.443 +00:00 [INF] Creating key {22cf0665-de29-42d2-8d21-4c4baa860df4} with creation date 2025-12-03 10:08:37Z, activation date 2025-12-03 10:08:37Z, and expiration date 2026-03-03 10:08:37Z.
+2025-12-03 10:08:37.459 +00:00 [WRN] No XML encryptor configured. Key {22cf0665-de29-42d2-8d21-4c4baa860df4} may be persisted to storage in unencrypted form.
+2025-12-03 10:08:37.723 +00:00 [INF] Now listening on: http://[::]:8080
+2025-12-03 10:08:37.724 +00:00 [INF] Now listening on: https://[::]:8081
+2025-12-03 10:08:37.725 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 10:08:37.726 +00:00 [INF] Hosting environment: Development
+2025-12-03 10:08:37.726 +00:00 [INF] Content root path: /app
+2025-12-03 10:08:38.387 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger - null null
+2025-12-03 10:08:38.520 +00:00 [INF] HTTP GET /swagger responded 404 in 103.2319 ms
+2025-12-03 10:08:38.526 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger - 404 0 null 140.138ms
+2025-12-03 10:08:38.542 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:32769/swagger, Response status code: 404
+2025-12-03 10:13:48.265 +00:00 [INF] Request starting HTTP/1.1 HEAD http://localhost:32768/ - null null
+2025-12-03 10:13:48.275 +00:00 [INF] Request finished HTTP/1.1 HEAD http://localhost:32768/ - 307 null null 10.1321ms
+2025-12-03 11:10:32.320 +00:00 [INF] Starting BookingService API
+2025-12-03 11:10:33.098 +00:00 [WRN] Storing keys in a directory '/home/app/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+2025-12-03 11:10:33.100 +00:00 [INF] User profile is available. Using '/home/app/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-12-03 11:10:33.109 +00:00 [INF] Creating key {3362a26c-b613-45fd-85fd-b13ccb02a31c} with creation date 2025-12-03 11:10:33Z, activation date 2025-12-03 11:10:33Z, and expiration date 2026-03-03 11:10:33Z.
+2025-12-03 11:10:33.141 +00:00 [WRN] No XML encryptor configured. Key {3362a26c-b613-45fd-85fd-b13ccb02a31c} may be persisted to storage in unencrypted form.
+2025-12-03 11:10:33.147 +00:00 [INF] Writing data to file '/home/app/.aspnet/DataProtection-Keys/key-3362a26c-b613-45fd-85fd-b13ccb02a31c.xml'.
+2025-12-03 11:10:33.243 +00:00 [INF] Now listening on: http://[::]:8080
+2025-12-03 11:10:33.244 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 11:10:33.245 +00:00 [INF] Hosting environment: Development
+2025-12-03 11:10:33.245 +00:00 [INF] Content root path: /app
+2025-12-03 11:10:33.951 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32770/swagger - null null
+2025-12-03 11:10:34.086 +00:00 [INF] HTTP GET /swagger responded 404 in 104.6099 ms
+2025-12-03 11:10:34.095 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32770/swagger - 404 0 null 144.7773ms
+2025-12-03 11:10:34.099 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:32770/swagger, Response status code: 404
+2025-12-03 12:11:30.177 +01:00 [INF] Starting BookingService API
+2025-12-03 12:11:30.952 +01:00 [INF] User profile is available. Using 'C:\Users\Miguel\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-03 12:11:30.963 +01:00 [INF] Creating key {e5f643ff-9e64-4925-a467-0df3a51f0216} with creation date 2025-12-03 11:11:30Z, activation date 2025-12-03 11:11:30Z, and expiration date 2026-03-03 11:11:30Z.
+2025-12-03 12:11:30.983 +01:00 [INF] Writing data to file 'C:\Users\Miguel\AppData\Local\ASP.NET\DataProtection-Keys\key-e5f643ff-9e64-4925-a467-0df3a51f0216.xml'.
+2025-12-03 12:11:31.121 +01:00 [INF] Now listening on: http://localhost:5234
+2025-12-03 12:11:31.123 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 12:11:31.124 +01:00 [INF] Hosting environment: Development
+2025-12-03 12:11:31.125 +01:00 [INF] Content root path: C:\Users\Miguel\source\repos\BookingService.Api\BookingService.Api
