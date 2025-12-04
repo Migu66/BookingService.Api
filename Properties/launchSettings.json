@@ -29,14 +29,14 @@
       }
     },
     "Container (Dockerfile)": {
-      "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
-      "environmentVariables": {
-        "ASPNETCORE_HTTP_PORTS": "8080"
-      },
-      "publishAllPorts": true,
-      "useSSL": false
+        "commandName": "Docker",
+        "launchBrowser": true,
+        "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/index.html",
+        "environmentVariables": {
+            "ASPNETCORE_HTTP_PORTS": "8080"
+        },
+        "publishAllPorts": true,
+        "useSSL": false
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
