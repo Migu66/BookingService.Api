@@ -1,5 +1,6 @@
 using AutoMapper;
 using BookingService.Api.Core.Application.Features.Auth.DTOs;
+using BookingService.Api.Core.Domain.Enums;
 using BookingService.Api.Infrastructure.Data;
 using BookingService.Api.Infrastructure.Services;
 using MediatR;
@@ -20,7 +21,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, AuthResponse>
         ApplicationDbContext context,
         IPasswordHasher passwordHasher,
         ITokenService tokenService,
-      IMapper mapper)
+        IMapper mapper)
     {
         _context = context;
         _passwordHasher = passwordHasher;
@@ -47,9 +48,10 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, AuthResponse>
             throw new UnauthorizedAccessException("Invalid email or password");
         }
 
-        // Generate token
+        // Generate token (use enum name if possible so Role claim is "Admin"/"User")
         var response = _mapper.Map<AuthResponse>(user);
-        response.Token = _tokenService.GenerateToken(user.Id, user.Email, user.Role.ToString());
+        var roleName = Enum.GetName(typeof(UserRole), user.Role) ?? user.Role.ToString();
+        response.Token = _tokenService.GenerateToken(user.Id, user.Email, roleName);
 
         return response;
     }

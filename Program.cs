@@ -37,7 +37,7 @@ try
     // AutoMapper
     builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-    // FluentValidation
+    // FluentValidation - Se llaman los validadores en el ensamblado actual
     builder.Services.AddFluentValidationAutoValidation();
     builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 

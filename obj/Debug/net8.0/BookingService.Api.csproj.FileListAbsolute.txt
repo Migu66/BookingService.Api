@@ -137,3 +137,4 @@ C:\Users\Miguel\source\repos\BookingService.Api\BookingService.Api\obj\Debug\net
 C:\Users\Miguel\source\repos\BookingService.Api\BookingService.Api\obj\Debug\net8.0\BookingService.Api.pdb
 C:\Users\Miguel\source\repos\BookingService.Api\BookingService.Api\obj\Debug\net8.0\BookingService.Api.genruntimeconfig.cache
 C:\Users\Miguel\source\repos\BookingService.Api\BookingService.Api\obj\Debug\net8.0\ref\BookingService.Api.dll
+C:\Users\Miguel\source\repos\BookingService.Api\BookingService.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

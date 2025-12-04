@@ -1,0 +1,488 @@
+2025-12-04 09:03:06.336 +00:00 [INF] Starting BookingService API
+2025-12-04 09:03:07.300 +00:00 [WRN] Storing keys in a directory '/home/app/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+2025-12-04 09:03:07.303 +00:00 [INF] User profile is available. Using '/home/app/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-12-04 09:03:07.314 +00:00 [INF] Creating key {49e728cc-bf82-498c-827a-dc5022df4c71} with creation date 2025-12-04 09:03:07Z, activation date 2025-12-04 09:03:07Z, and expiration date 2026-03-04 09:03:07Z.
+2025-12-04 09:03:07.379 +00:00 [WRN] No XML encryptor configured. Key {49e728cc-bf82-498c-827a-dc5022df4c71} may be persisted to storage in unencrypted form.
+2025-12-04 09:03:07.387 +00:00 [INF] Writing data to file '/home/app/.aspnet/DataProtection-Keys/key-49e728cc-bf82-498c-827a-dc5022df4c71.xml'.
+2025-12-04 09:03:07.499 +00:00 [INF] Now listening on: http://[::]:8080
+2025-12-04 09:03:07.500 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-04 09:03:07.501 +00:00 [INF] Hosting environment: Development
+2025-12-04 09:03:07.501 +00:00 [INF] Content root path: /app
+2025-12-04 09:03:38.310 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/swagger - null null
+2025-12-04 09:03:38.487 +00:00 [INF] HTTP GET /swagger responded 404 in 137.2682 ms
+2025-12-04 09:03:38.497 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/swagger - 404 0 null 188.4311ms
+2025-12-04 09:03:38.506 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:32768/swagger, Response status code: 404
+2025-12-04 09:05:19.083 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/ - null null
+2025-12-04 09:05:19.087 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/ - 301 0 null 4.3495ms
+2025-12-04 09:05:19.095 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/index.html - null null
+2025-12-04 09:05:19.141 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/index.html - 200 null text/html;charset=utf-8 46.0621ms
+2025-12-04 09:05:19.156 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/swagger-ui.css - null null
+2025-12-04 09:05:19.215 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-12-04 09:05:19.216 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/swagger-ui.css - 200 152034 text/css 59.7451ms
+2025-12-04 09:05:19.217 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/swagger-ui-bundle.js - null null
+2025-12-04 09:05:19.379 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/swagger-ui-standalone-preset.js - null null
+2025-12-04 09:05:19.392 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-12-04 09:05:19.392 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-12-04 09:05:19.393 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/swagger-ui-standalone-preset.js - 200 230280 text/javascript 13.8542ms
+2025-12-04 09:05:19.393 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/swagger-ui-bundle.js - 200 1456926 text/javascript 175.8078ms
+2025-12-04 09:05:19.523 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/swagger/v1/swagger.json - null null
+2025-12-04 09:05:19.535 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/favicon-32x32.png - null null
+2025-12-04 09:05:19.535 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-12-04 09:05:19.536 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/favicon-32x32.png - 200 628 image/png 1.2623ms
+2025-12-04 09:05:19.760 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 237.1248ms
+2025-12-04 09:08:14.235 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/api/BlockedTimes/resource/1 - null null
+2025-12-04 09:08:14.255 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-04 09:08:14.259 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-04 09:08:14.260 +00:00 [INF] HTTP GET /api/BlockedTimes/resource/1 responded 401 in 19.6085 ms
+2025-12-04 09:08:14.260 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/api/BlockedTimes/resource/1 - 401 0 null 25.6529ms
+2025-12-04 09:08:17.795 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/api/BlockedTimes/resource/1 - null null
+2025-12-04 09:08:17.798 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-04 09:08:17.799 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-04 09:08:17.799 +00:00 [INF] HTTP GET /api/BlockedTimes/resource/1 responded 401 in 2.6969 ms
+2025-12-04 09:08:17.800 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/api/BlockedTimes/resource/1 - 401 0 null 4.2877ms
+2025-12-04 09:15:22.633 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:32768/api/Auth/login - application/json 65
+2025-12-04 09:15:22.636 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.AuthController.Login (BookingService.Api)'
+2025-12-04 09:15:22.662 +00:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Auth.DTOs.AuthResponse]] Login(BookingService.Api.Core.Application.Features.Auth.DTOs.LoginRequest) on controller BookingService.Api.Presentation.Controllers.AuthController (BookingService.Api).
+2025-12-04 09:15:25.229 +00:00 [INF] Executed DbCommand (91ms) [Parameters=[@__request_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."IsActive", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+FROM "Users" AS u
+WHERE u."Email" = @__request_Email_0
+LIMIT 1
+2025-12-04 09:15:25.664 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Auth.DTOs.AuthResponse'.
+2025-12-04 09:15:25.673 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.AuthController.Login (BookingService.Api) in 3008.0441ms
+2025-12-04 09:15:25.673 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.AuthController.Login (BookingService.Api)'
+2025-12-04 09:15:25.675 +00:00 [INF] HTTP POST /api/Auth/login responded 200 in 3040.1381 ms
+2025-12-04 09:15:25.680 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:32768/api/Auth/login - 200 null application/json; charset=utf-8 3047.404ms
+2025-12-04 09:16:18.044 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/api/Resources - null null
+2025-12-04 09:16:18.078 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:16:18.081 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:16:18.143 +00:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:16:18.153 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:16:18.159 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 77.3611ms
+2025-12-04 09:16:18.160 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:16:18.160 +00:00 [INF] HTTP GET /api/Resources responded 200 in 110.8284 ms
+2025-12-04 09:16:18.161 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/api/Resources - 200 null application/json; charset=utf-8 116.132ms
+2025-12-04 09:16:22.628 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/api/Resources - null null
+2025-12-04 09:16:22.629 +00:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-12-04 09:16:22.629 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-04 09:16:22.630 +00:00 [INF] HTTP GET /api/Resources responded 401 in 1.0550 ms
+2025-12-04 09:16:22.630 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/api/Resources - 401 0 null 2.0761ms
+2025-12-04 09:16:26.107 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/api/Resources - null null
+2025-12-04 09:16:26.109 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:16:26.110 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:16:26.184 +00:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:16:26.185 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:16:26.186 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 75.7245ms
+2025-12-04 09:16:26.186 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:16:26.186 +00:00 [INF] HTTP GET /api/Resources responded 200 in 78.4827 ms
+2025-12-04 09:16:26.187 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/api/Resources - 200 null application/json; charset=utf-8 79.6876ms
+2025-12-04 09:16:33.667 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/api/Resources - null null
+2025-12-04 09:16:33.693 +00:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-12-04 09:16:33.694 +00:00 [INF] Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Token does not have a kid. Keys tried: '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2025-12-04 09:16:33.695 +00:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-12-04 09:16:33.696 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-04 09:16:33.696 +00:00 [INF] HTTP GET /api/Resources responded 401 in 28.3337 ms
+2025-12-04 09:16:33.697 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/api/Resources - 401 0 null 29.3242ms
+2025-12-04 09:16:38.486 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/api/Resources - null null
+2025-12-04 09:16:38.487 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:16:38.487 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:16:38.523 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:16:38.523 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:16:38.524 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 36.1183ms
+2025-12-04 09:16:38.524 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:16:38.524 +00:00 [INF] HTTP GET /api/Resources responded 200 in 37.8077 ms
+2025-12-04 09:16:38.525 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/api/Resources - 200 null application/json; charset=utf-8 38.7582ms
+2025-12-04 09:20:59.825 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:32768/api/Resources - application/json 49
+2025-12-04 09:20:59.826 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-04 09:20:59.828 +00:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-12-04 09:20:59.829 +00:00 [INF] HTTP POST /api/Resources responded 403 in 3.1047 ms
+2025-12-04 09:20:59.829 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:32768/api/Resources - 403 0 null 4.3475ms
+2025-12-04 09:21:37.452 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/api/Resources - null null
+2025-12-04 09:21:37.458 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:21:37.459 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:21:37.913 +00:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:21:37.913 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:21:37.914 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 454.6808ms
+2025-12-04 09:21:37.914 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:21:37.915 +00:00 [INF] HTTP GET /api/Resources responded 200 in 458.9601 ms
+2025-12-04 09:21:37.915 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/api/Resources - 200 null application/json; charset=utf-8 463.5995ms
+2025-12-04 09:26:20.248 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:32768/api/Resources - application/json 49
+2025-12-04 09:26:20.249 +00:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-04 09:26:20.249 +00:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-12-04 09:26:20.250 +00:00 [INF] HTTP POST /api/Resources responded 403 in 1.3337 ms
+2025-12-04 09:26:20.250 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:32768/api/Resources - 403 0 null 2.4515ms
+2025-12-04 09:31:25.522 +00:00 [INF] Starting BookingService API
+2025-12-04 09:31:26.213 +00:00 [WRN] Storing keys in a directory '/home/app/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+2025-12-04 09:31:26.215 +00:00 [INF] User profile is available. Using '/home/app/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-12-04 09:31:26.224 +00:00 [INF] Creating key {9eb6f0ef-734b-42dd-8241-3ace09097518} with creation date 2025-12-04 09:31:26Z, activation date 2025-12-04 09:31:26Z, and expiration date 2026-03-04 09:31:26Z.
+2025-12-04 09:31:26.243 +00:00 [WRN] No XML encryptor configured. Key {9eb6f0ef-734b-42dd-8241-3ace09097518} may be persisted to storage in unencrypted form.
+2025-12-04 09:31:26.248 +00:00 [INF] Writing data to file '/home/app/.aspnet/DataProtection-Keys/key-9eb6f0ef-734b-42dd-8241-3ace09097518.xml'.
+2025-12-04 09:31:26.320 +00:00 [INF] Now listening on: http://[::]:8080
+2025-12-04 09:31:26.322 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-04 09:31:26.322 +00:00 [INF] Hosting environment: Development
+2025-12-04 09:31:26.323 +00:00 [INF] Content root path: /app
+2025-12-04 09:31:27.798 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32770/swagger - null null
+2025-12-04 09:31:27.927 +00:00 [INF] HTTP GET /swagger responded 404 in 101.6726 ms
+2025-12-04 09:31:28.008 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32770/swagger - 404 0 null 210.3144ms
+2025-12-04 09:31:28.012 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:32770/swagger, Response status code: 404
+2025-12-04 09:31:30.022 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32770/swagger - null null
+2025-12-04 09:31:30.026 +00:00 [INF] HTTP GET /swagger responded 404 in 1.1224 ms
+2025-12-04 09:31:30.035 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32770/swagger - 404 0 null 13.3611ms
+2025-12-04 09:31:30.036 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:32770/swagger, Response status code: 404
+2025-12-04 09:35:13.013 +00:00 [INF] Starting BookingService API
+2025-12-04 09:35:13.671 +00:00 [WRN] Storing keys in a directory '/home/app/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+2025-12-04 09:35:13.673 +00:00 [INF] User profile is available. Using '/home/app/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-12-04 09:35:13.682 +00:00 [INF] Creating key {6ab164ba-d006-499b-949c-ef36cad3db5f} with creation date 2025-12-04 09:35:13Z, activation date 2025-12-04 09:35:13Z, and expiration date 2026-03-04 09:35:13Z.
+2025-12-04 09:35:13.697 +00:00 [WRN] No XML encryptor configured. Key {6ab164ba-d006-499b-949c-ef36cad3db5f} may be persisted to storage in unencrypted form.
+2025-12-04 09:35:13.701 +00:00 [INF] Writing data to file '/home/app/.aspnet/DataProtection-Keys/key-6ab164ba-d006-499b-949c-ef36cad3db5f.xml'.
+2025-12-04 09:35:13.781 +00:00 [INF] Now listening on: http://[::]:8080
+2025-12-04 09:35:13.783 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-04 09:35:13.783 +00:00 [INF] Hosting environment: Development
+2025-12-04 09:35:13.784 +00:00 [INF] Content root path: /app
+2025-12-04 09:35:14.506 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/swagger - null null
+2025-12-04 09:35:14.634 +00:00 [INF] HTTP GET /swagger responded 404 in 100.2246 ms
+2025-12-04 09:35:14.644 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/swagger - 404 0 null 139.0875ms
+2025-12-04 09:35:14.649 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:32772/swagger, Response status code: 404
+2025-12-04 09:35:24.716 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/ - null null
+2025-12-04 09:35:24.718 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/ - 301 0 null 2.5686ms
+2025-12-04 09:35:24.727 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/index.html - null null
+2025-12-04 09:35:24.775 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/index.html - 200 null text/html;charset=utf-8 47.4642ms
+2025-12-04 09:35:24.791 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/swagger-ui.css - null null
+2025-12-04 09:35:24.791 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/swagger-ui-bundle.js - null null
+2025-12-04 09:35:24.792 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/swagger-ui-standalone-preset.js - null null
+2025-12-04 09:35:24.950 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-12-04 09:35:24.950 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-12-04 09:35:24.952 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/swagger-ui-standalone-preset.js - 200 230280 text/javascript 160.7826ms
+2025-12-04 09:35:24.952 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/swagger-ui.css - 200 152034 text/css 161.1821ms
+2025-12-04 09:35:25.004 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-12-04 09:35:25.005 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/swagger-ui-bundle.js - 200 1456926 text/javascript 213.7024ms
+2025-12-04 09:35:25.131 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/swagger/v1/swagger.json - null null
+2025-12-04 09:35:25.144 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/favicon-32x32.png - null null
+2025-12-04 09:35:25.145 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-12-04 09:35:25.146 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/favicon-32x32.png - 200 628 image/png 1.317ms
+2025-12-04 09:35:25.239 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 107.5985ms
+2025-12-04 09:38:11.266 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:32772/api/Auth/login - application/json 65
+2025-12-04 09:38:11.298 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.AuthController.Login (BookingService.Api)'
+2025-12-04 09:38:11.320 +00:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Auth.DTOs.AuthResponse]] Login(BookingService.Api.Core.Application.Features.Auth.DTOs.LoginRequest) on controller BookingService.Api.Presentation.Controllers.AuthController (BookingService.Api).
+2025-12-04 09:38:13.591 +00:00 [INF] Executed DbCommand (88ms) [Parameters=[@__request_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."Email", u."IsActive", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+FROM "Users" AS u
+WHERE u."Email" = @__request_Email_0
+LIMIT 1
+2025-12-04 09:38:14.032 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Auth.DTOs.AuthResponse'.
+2025-12-04 09:38:14.041 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.AuthController.Login (BookingService.Api) in 2717.4314ms
+2025-12-04 09:38:14.042 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.AuthController.Login (BookingService.Api)'
+2025-12-04 09:38:14.043 +00:00 [INF] HTTP POST /api/Auth/login responded 200 in 2765.9898 ms
+2025-12-04 09:38:14.049 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:32772/api/Auth/login - 200 null application/json; charset=utf-8 2783.7923ms
+2025-12-04 09:38:34.795 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:38:34.835 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:38:34.838 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:38:34.903 +00:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:38:34.911 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:38:34.918 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 79.621ms
+2025-12-04 09:38:34.918 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:38:34.919 +00:00 [INF] HTTP GET /api/Resources responded 200 in 117.1948 ms
+2025-12-04 09:38:34.919 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 124.8946ms
+2025-12-04 09:38:51.731 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:32772/api/Resources - application/json 49
+2025-12-04 09:38:51.735 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api)'
+2025-12-04 09:38:51.738 +00:00 [INF] Route matched with {action = "Create", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] Create(BookingService.Api.Core.Application.Features.Resources.DTOs.CreateResourceRequest) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:38:51.916 +00:00 [INF] Executed DbCommand (46ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Resources" ("CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-12-04 09:38:51.940 +00:00 [INF] Executing CreatedAtActionResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:38:51.957 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api) in 218.1001ms
+2025-12-04 09:38:51.957 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api)'
+2025-12-04 09:38:51.957 +00:00 [INF] HTTP POST /api/Resources responded 201 in 225.5637 ms
+2025-12-04 09:38:51.958 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:32772/api/Resources - 201 null application/json; charset=utf-8 226.9422ms
+2025-12-04 09:38:57.023 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:38:57.025 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:38:57.026 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:38:57.064 +00:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:38:57.065 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:38:57.066 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 39.8586ms
+2025-12-04 09:38:57.066 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:38:57.067 +00:00 [INF] HTTP GET /api/Resources responded 200 in 43.0371 ms
+2025-12-04 09:38:57.067 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 44.1152ms
+2025-12-04 09:39:01.811 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:32772/api/Resources - application/json 49
+2025-12-04 09:39:01.812 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api)'
+2025-12-04 09:39:01.812 +00:00 [INF] Route matched with {action = "Create", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] Create(BookingService.Api.Core.Application.Features.Resources.DTOs.CreateResourceRequest) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:39:01.852 +00:00 [INF] Executed DbCommand (35ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Resources" ("CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-12-04 09:39:01.853 +00:00 [INF] Executing CreatedAtActionResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:39:01.854 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api) in 41.3866ms
+2025-12-04 09:39:01.854 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api)'
+2025-12-04 09:39:01.855 +00:00 [INF] HTTP POST /api/Resources responded 201 in 43.1028 ms
+2025-12-04 09:39:01.855 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:32772/api/Resources - 201 null application/json; charset=utf-8 44.049ms
+2025-12-04 09:39:09.884 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:39:09.885 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:39:09.885 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:39:09.922 +00:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:39:09.922 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:39:09.923 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 38.0513ms
+2025-12-04 09:39:09.924 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:39:09.924 +00:00 [INF] HTTP GET /api/Resources responded 200 in 39.6452 ms
+2025-12-04 09:39:09.925 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 40.7669ms
+2025-12-04 09:45:38.816 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources/1 - null null
+2025-12-04 09:45:38.817 +00:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-12-04 09:45:38.821 +00:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-04 09:45:38.821 +00:00 [INF] HTTP GET /api/Resources/1 responded 401 in 5.1101 ms
+2025-12-04 09:45:38.822 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources/1 - 401 0 null 6.1354ms
+2025-12-04 09:45:44.876 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources/1 - null null
+2025-12-04 09:45:44.877 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api)'
+2025-12-04 09:45:44.881 +00:00 [INF] Route matched with {action = "GetById", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] GetById(Int32) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:45:45.671 +00:00 [INF] Executed DbCommand (71ms) [Parameters=[@__query_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."Id" = @__query_Id_0
+LIMIT 1
+2025-12-04 09:45:45.672 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:45:45.673 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api) in 791.6404ms
+2025-12-04 09:45:45.673 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api)'
+2025-12-04 09:45:45.674 +00:00 [INF] HTTP GET /api/Resources/1 responded 200 in 797.2919 ms
+2025-12-04 09:45:45.674 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources/1 - 200 null application/json; charset=utf-8 798.315ms
+2025-12-04 09:50:55.021 +00:00 [INF] Request starting HTTP/1.1 PUT http://localhost:32772/api/Resources/2 - application/json 74
+2025-12-04 09:50:55.022 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api)'
+2025-12-04 09:50:55.026 +00:00 [INF] Route matched with {action = "Update", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] Update(Int32, BookingService.Api.Core.Application.Features.Resources.DTOs.UpdateResourceRequest) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:50:55.419 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[@__command_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."Id" = @__command_Id_0
+LIMIT 1
+2025-12-04 09:50:55.480 +00:00 [INF] Executed DbCommand (54ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?', @p1='?' (DbType = Boolean), @p2='?', @p3='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Resources" SET "Description" = @p0, "IsActive" = @p1, "Name" = @p2, "UpdatedAt" = @p3
+WHERE "Id" = @p4;
+2025-12-04 09:50:55.482 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:50:55.483 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api) in 456.6934ms
+2025-12-04 09:50:55.483 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api)'
+2025-12-04 09:50:55.483 +00:00 [INF] HTTP PUT /api/Resources/2 responded 200 in 461.5260 ms
+2025-12-04 09:50:55.484 +00:00 [INF] Request finished HTTP/1.1 PUT http://localhost:32772/api/Resources/2 - 200 null application/json; charset=utf-8 467.1168ms
+2025-12-04 09:51:13.804 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:51:13.805 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:51:13.805 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:51:13.843 +00:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:51:13.844 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:51:13.844 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 38.4902ms
+2025-12-04 09:51:13.844 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:51:13.845 +00:00 [INF] HTTP GET /api/Resources responded 200 in 40.2272 ms
+2025-12-04 09:51:13.845 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 41.2676ms
+2025-12-04 09:51:57.595 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:51:57.596 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:51:57.596 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:51:57.631 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:51:57.631 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:51:57.632 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 35.2575ms
+2025-12-04 09:51:57.632 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:51:57.633 +00:00 [INF] HTTP GET /api/Resources responded 200 in 37.1119 ms
+2025-12-04 09:51:57.633 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 41.0188ms
+2025-12-04 09:52:07.282 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources/1 - null null
+2025-12-04 09:52:07.283 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api)'
+2025-12-04 09:52:07.283 +00:00 [INF] Route matched with {action = "GetById", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] GetById(Int32) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:52:07.318 +00:00 [INF] Executed DbCommand (32ms) [Parameters=[@__query_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."Id" = @__query_Id_0
+LIMIT 1
+2025-12-04 09:52:07.319 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:52:07.319 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api) in 35.466ms
+2025-12-04 09:52:07.320 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api)'
+2025-12-04 09:52:07.320 +00:00 [INF] HTTP GET /api/Resources/1 responded 200 in 37.3015 ms
+2025-12-04 09:52:07.320 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources/1 - 200 null application/json; charset=utf-8 38.2978ms
+2025-12-04 09:52:10.345 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:52:10.353 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:52:10.354 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:52:10.388 +00:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:52:10.389 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:52:10.389 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 34.9462ms
+2025-12-04 09:52:10.389 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:52:10.390 +00:00 [INF] HTTP GET /api/Resources responded 200 in 36.9554 ms
+2025-12-04 09:52:10.390 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 45.5595ms
+2025-12-04 09:52:38.124 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:32772/api/Resources - application/json 49
+2025-12-04 09:52:38.128 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api)'
+2025-12-04 09:52:38.129 +00:00 [INF] Route matched with {action = "Create", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] Create(BookingService.Api.Core.Application.Features.Resources.DTOs.CreateResourceRequest) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:52:38.166 +00:00 [INF] Executed DbCommand (35ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Resources" ("CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-12-04 09:52:38.167 +00:00 [INF] Executing CreatedAtActionResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:52:38.168 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api) in 38.7565ms
+2025-12-04 09:52:38.168 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Create (BookingService.Api)'
+2025-12-04 09:52:38.168 +00:00 [INF] HTTP POST /api/Resources responded 201 in 40.8076 ms
+2025-12-04 09:52:38.169 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:32772/api/Resources - 201 null application/json; charset=utf-8 44.7494ms
+2025-12-04 09:52:41.704 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:52:41.705 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:52:41.705 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:52:41.739 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:52:41.740 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:52:41.741 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 35.2607ms
+2025-12-04 09:52:41.741 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:52:41.741 +00:00 [INF] HTTP GET /api/Resources responded 200 in 37.1730 ms
+2025-12-04 09:52:41.742 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 38.1719ms
+2025-12-04 09:52:52.224 +00:00 [INF] Request starting HTTP/1.1 PUT http://localhost:32772/api/Resources/2 - application/json 72
+2025-12-04 09:52:52.226 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api)'
+2025-12-04 09:52:52.227 +00:00 [INF] Route matched with {action = "Update", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] Update(Int32, BookingService.Api.Core.Application.Features.Resources.DTOs.UpdateResourceRequest) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:52:52.262 +00:00 [INF] Executed DbCommand (32ms) [Parameters=[@__command_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."Id" = @__command_Id_0
+LIMIT 1
+2025-12-04 09:52:52.300 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Resources" SET "Name" = @p0, "UpdatedAt" = @p1
+WHERE "Id" = @p2;
+2025-12-04 09:52:52.301 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:52:52.301 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api) in 73.6139ms
+2025-12-04 09:52:52.301 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api)'
+2025-12-04 09:52:52.302 +00:00 [INF] HTTP PUT /api/Resources/2 responded 200 in 76.1409 ms
+2025-12-04 09:52:52.302 +00:00 [INF] Request finished HTTP/1.1 PUT http://localhost:32772/api/Resources/2 - 200 null application/json; charset=utf-8 77.9439ms
+2025-12-04 09:52:56.845 +00:00 [INF] Request starting HTTP/1.1 PUT http://localhost:32772/api/Resources/2 - application/json 71
+2025-12-04 09:52:56.846 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api)'
+2025-12-04 09:52:56.846 +00:00 [INF] Route matched with {action = "Update", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] Update(Int32, BookingService.Api.Core.Application.Features.Resources.DTOs.UpdateResourceRequest) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:52:56.883 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[@__command_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."Id" = @__command_Id_0
+LIMIT 1
+2025-12-04 09:52:56.917 +00:00 [INF] Executed DbCommand (34ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Resources" SET "IsActive" = @p0, "UpdatedAt" = @p1
+WHERE "Id" = @p2;
+2025-12-04 09:52:56.918 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:52:56.919 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api) in 72.256ms
+2025-12-04 09:52:56.919 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api)'
+2025-12-04 09:52:56.919 +00:00 [INF] HTTP PUT /api/Resources/2 responded 200 in 74.0563 ms
+2025-12-04 09:52:56.920 +00:00 [INF] Request finished HTTP/1.1 PUT http://localhost:32772/api/Resources/2 - 200 null application/json; charset=utf-8 75.0003ms
+2025-12-04 09:53:09.264 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:53:09.265 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:53:09.266 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:53:09.299 +00:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:53:09.300 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:53:09.300 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 34.2789ms
+2025-12-04 09:53:09.301 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:53:09.301 +00:00 [INF] HTTP GET /api/Resources responded 200 in 36.2908 ms
+2025-12-04 09:53:09.302 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 37.3016ms
+2025-12-04 09:53:16.486 +00:00 [INF] Request starting HTTP/1.1 PUT http://localhost:32772/api/Resources/2 - application/json 72
+2025-12-04 09:53:16.490 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api)'
+2025-12-04 09:53:16.491 +00:00 [INF] Route matched with {action = "Update", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] Update(Int32, BookingService.Api.Core.Application.Features.Resources.DTOs.UpdateResourceRequest) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:53:16.524 +00:00 [INF] Executed DbCommand (31ms) [Parameters=[@__command_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."Id" = @__command_Id_0
+LIMIT 1
+2025-12-04 09:53:16.558 +00:00 [INF] Executed DbCommand (32ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Resources" SET "IsActive" = @p0, "UpdatedAt" = @p1
+WHERE "Id" = @p2;
+2025-12-04 09:53:16.559 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:53:16.559 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api) in 68.4973ms
+2025-12-04 09:53:16.560 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Update (BookingService.Api)'
+2025-12-04 09:53:16.560 +00:00 [INF] HTTP PUT /api/Resources/2 responded 200 in 70.7733 ms
+2025-12-04 09:53:16.561 +00:00 [INF] Request finished HTTP/1.1 PUT http://localhost:32772/api/Resources/2 - 200 null application/json; charset=utf-8 78.7652ms
+2025-12-04 09:53:18.875 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources - null null
+2025-12-04 09:53:18.876 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:53:18.877 +00:00 [INF] Route matched with {action = "GetAll", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]]] GetAll() on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:53:18.909 +00:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."IsActive"
+ORDER BY r."Name"
+2025-12-04 09:53:18.910 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto, BookingService.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-04 09:53:18.911 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api) in 34.017ms
+2025-12-04 09:53:18.911 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetAll (BookingService.Api)'
+2025-12-04 09:53:18.912 +00:00 [INF] HTTP GET /api/Resources responded 200 in 35.8943 ms
+2025-12-04 09:53:18.912 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources - 200 null application/json; charset=utf-8 36.772ms
+2025-12-04 09:53:46.071 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32772/api/Resources/3 - null null
+2025-12-04 09:53:46.078 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api)'
+2025-12-04 09:53:46.079 +00:00 [INF] Route matched with {action = "GetById", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto]] GetById(Int32) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:53:46.115 +00:00 [INF] Executed DbCommand (33ms) [Parameters=[@__query_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."Id" = @__query_Id_0
+LIMIT 1
+2025-12-04 09:53:46.141 +00:00 [INF] Executing OkObjectResult, writing value of type 'BookingService.Api.Core.Application.Features.Resources.DTOs.ResourceDto'.
+2025-12-04 09:53:46.142 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api) in 62.4983ms
+2025-12-04 09:53:46.142 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.GetById (BookingService.Api)'
+2025-12-04 09:53:46.143 +00:00 [INF] HTTP GET /api/Resources/3 responded 200 in 67.3682 ms
+2025-12-04 09:53:46.143 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32772/api/Resources/3 - 200 null application/json; charset=utf-8 72.3847ms
+2025-12-04 09:54:02.813 +00:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:32772/api/Resources/3 - null null
+2025-12-04 09:54:02.814 +00:00 [INF] Executing endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Delete (BookingService.Api)'
+2025-12-04 09:54:02.817 +00:00 [INF] Route matched with {action = "Delete", controller = "Resources"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Delete(Int32) on controller BookingService.Api.Presentation.Controllers.ResourcesController (BookingService.Api).
+2025-12-04 09:54:02.853 +00:00 [INF] Executed DbCommand (31ms) [Parameters=[@__command_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."Description", r."IsActive", r."Name", r."UpdatedAt"
+FROM "Resources" AS r
+WHERE r."Id" = @__command_Id_0
+LIMIT 1
+2025-12-04 09:54:02.897 +00:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Resources"
+WHERE "Id" = @p0;
+2025-12-04 09:54:02.903 +00:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-12-04 09:54:02.903 +00:00 [INF] Executed action BookingService.Api.Presentation.Controllers.ResourcesController.Delete (BookingService.Api) in 85.8362ms
+2025-12-04 09:54:02.903 +00:00 [INF] Executed endpoint 'BookingService.Api.Presentation.Controllers.ResourcesController.Delete (BookingService.Api)'
+2025-12-04 09:54:02.904 +00:00 [INF] HTTP DELETE /api/Resources/3 responded 204 in 90.2312 ms
+2025-12-04 09:54:02.904 +00:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:32772/api/Resources/3 - 204 null null 91.1809ms
