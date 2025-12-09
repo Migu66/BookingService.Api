@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text;
 using BookingService.Api.Core.Application.Common.Mappings;
 using BookingService.Api.Infrastructure.Data;
+using BookingService.Api.Infrastructure.HealthChecks;
 using BookingService.Api.Infrastructure.Middleware;
 using BookingService.Api.Infrastructure.Services;
 using FluentValidation;
@@ -50,9 +51,15 @@ try
 
     // Health Checks
     builder.Services.AddHealthChecks()
-        .AddDbContextCheck<ApplicationDbContext>(
+        .AddCheck<DatabaseHealthCheck>(
             name: "database",
-            tags: new[] { "db", "postgresql" });
+            tags: new[] { "db", "postgresql", "ready" })
+        .AddCheck<SystemHealthCheck>(
+            name: "system",
+            tags: new[] { "system", "memory", "cpu" })
+        .AddCheck<JwtConfigurationHealthCheck>(
+            name: "jwt-configuration",
+            tags: new[] { "configuration", "jwt", "ready" });
 
     // JWT Authentication
     var jwtSettings = builder.Configuration.GetSection("JwtSettings");
