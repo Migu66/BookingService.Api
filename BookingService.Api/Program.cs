@@ -48,6 +48,12 @@ try
     builder.Services.AddScoped<ITokenService, TokenService>();
     builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
+    // Health Checks
+    builder.Services.AddHealthChecks()
+        .AddDbContextCheck<ApplicationDbContext>(
+            name: "database",
+            tags: new[] { "db", "postgresql" });
+
     // JWT Authentication
     var jwtSettings = builder.Configuration.GetSection("JwtSettings");
     var secretKey = jwtSettings["SecretKey"] ?? throw new InvalidOperationException("JWT SecretKey not configured");
@@ -142,6 +148,7 @@ try
     app.UseAuthorization();
 
     app.MapControllers();
+    app.MapHealthChecks("/health");
 
     app.Run();
 }
