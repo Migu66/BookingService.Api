@@ -4,12 +4,14 @@ using BookingService.Api.Core.Application.Features.BlockedTimes.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace BookingService.Api.Presentation.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 [Authorize(Roles = "Admin")]
+[EnableRateLimiting("default")]
 public class BlockedTimesController : ControllerBase
 {
     private readonly IMediator _mediator;

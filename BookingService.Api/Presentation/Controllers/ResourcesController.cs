@@ -4,12 +4,14 @@ using BookingService.Api.Core.Application.Features.Resources.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace BookingService.Api.Presentation.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 [Authorize]
+[EnableRateLimiting("default")]
 public class ResourcesController : ControllerBase
 {
     private readonly IMediator _mediator;

@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Reflection;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace BookingService.Api.Presentation.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[EnableRateLimiting("default")]
 public class HealthController : ControllerBase
 {
     private readonly HealthCheckService _healthCheckService;
@@ -200,4 +202,5 @@ public class HealthController : ControllerBase
         return Ok(metrics);
     }
 }
+
 
