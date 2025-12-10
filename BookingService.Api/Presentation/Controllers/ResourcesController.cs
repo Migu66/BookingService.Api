@@ -1,3 +1,4 @@
+using BookingService.Api.Core.Application.Common.Models;
 using BookingService.Api.Core.Application.Features.Resources.DTOs;
 using BookingService.Api.Core.Application.Features.Resources.Commands;
 using BookingService.Api.Core.Application.Features.Resources.Queries;
@@ -25,10 +26,10 @@ public class ResourcesController : ControllerBase
     /// Get all active resources
     /// </summary>
     [HttpGet]
-    [ProducesResponseType(typeof(List<ResourceDto>), StatusCodes.Status200OK)]
-    public async Task<ActionResult<List<ResourceDto>>> GetAll()
+    [ProducesResponseType(typeof(PagedResult<ResourceDto>), StatusCodes.Status200OK)]
+    public async Task<ActionResult<PagedResult<ResourceDto>>> GetAll([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
     {
-        var query = new GetAllResourcesQuery();
+        var query = new GetAllResourcesQuery(pageNumber, pageSize);
         var result = await _mediator.Send(query);
         return Ok(result);
     }

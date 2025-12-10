@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using BookingService.Api.Core.Application.Common.Models;
 using BookingService.Api.Core.Application.Features.Reservations.Commands;
 using BookingService.Api.Core.Application.Features.Reservations.DTOs;
 using BookingService.Api.Core.Application.Features.Reservations.Queries;
@@ -38,11 +39,11 @@ public class ReservationsController : ControllerBase
     /// </summary>
     [HttpGet]
     [Authorize(Roles = "Admin")]
-    [ProducesResponseType(typeof(List<ReservationDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PagedResult<ReservationDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status403Forbidden)]
-    public async Task<ActionResult<List<ReservationDto>>> GetAll()
+    public async Task<ActionResult<PagedResult<ReservationDto>>> GetAll([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
     {
-        var query = new GetAllReservationsQuery();
+        var query = new GetAllReservationsQuery(pageNumber, pageSize);
         var result = await _mediator.Send(query);
         return Ok(result);
     }
