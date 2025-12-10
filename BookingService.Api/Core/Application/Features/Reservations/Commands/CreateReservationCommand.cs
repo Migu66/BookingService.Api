@@ -5,6 +5,8 @@ using BookingService.Api.Core.Domain.Enums;
 using BookingService.Api.Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using System.Data;
 
 namespace BookingService.Api.Core.Application.Features.Reservations.Commands;
 
@@ -14,6 +16,7 @@ public class CreateReservationCommandHandler : IRequestHandler<CreateReservation
 {
     private readonly ApplicationDbContext _context;
     private readonly IMapper _mapper;
+    private const int MaxRetryAttempts = 3;
 
     public CreateReservationCommandHandler(ApplicationDbContext context, IMapper mapper)
     {
@@ -25,59 +28,95 @@ public class CreateReservationCommandHandler : IRequestHandler<CreateReservation
     {
         var request = command.Request;
 
-        // Validate resource exists
-        var resource = await _context.Resources
-            .FirstOrDefaultAsync(r => r.Id == request.ResourceId && r.IsActive, cancellationToken);
+        // Use Serializable isolation level to prevent race conditions
+        var executionStrategy = _context.Database.CreateExecutionStrategy();
 
-        if (resource == null)
+        return await executionStrategy.ExecuteAsync(async () =>
         {
-            throw new KeyNotFoundException($"Resource with ID {request.ResourceId} not found or inactive");
-        }
+            await using var transaction = await _context.Database.BeginTransactionAsync(
+                IsolationLevel.Serializable, cancellationToken);
 
-        // Check for overlapping reservations
-        var hasOverlap = await _context.Reservations
-       .AnyAsync(r =>
-          r.ResourceId == request.ResourceId &&
-      r.Status == ReservationStatus.Active &&
-  r.StartTime < request.EndTime &&
-          r.EndTime > request.StartTime,
-      cancellationToken);
+            try
+            {
+                // Validate resource exists (with lock)
+                var resource = await _context.Resources
+                    .FromSqlRaw("SELECT * FROM \"Resources\" WHERE \"Id\" = {0} AND \"IsActive\" = true FOR UPDATE", request.ResourceId)
+                    .FirstOrDefaultAsync(cancellationToken);
 
-        if (hasOverlap)
-        {
-            throw new InvalidOperationException("The selected time slot overlaps with an existing reservation");
-        }
+                if (resource == null)
+                {
+                    throw new KeyNotFoundException($"Resource with ID {request.ResourceId} not found or inactive");
+                }
 
-        // Check for blocked times
-        var hasBlockedTime = await _context.BlockedTimes
-   .AnyAsync(bt =>
-  bt.ResourceId == request.ResourceId &&
-       bt.StartTime < request.EndTime &&
-    bt.EndTime > request.StartTime,
-           cancellationToken);
+                // Check for overlapping reservations with row-level lock
+                var hasOverlap = await _context.Reservations
+                    .AnyAsync(r =>
+                        r.ResourceId == request.ResourceId &&
+                        r.Status == ReservationStatus.Active &&
+                        r.StartTime < request.EndTime &&
+                        r.EndTime > request.StartTime,
+                        cancellationToken);
 
-        if (hasBlockedTime)
-        {
-            throw new InvalidOperationException("The selected time slot is blocked for maintenance");
-        }
+                if (hasOverlap)
+                {
+                    throw new InvalidOperationException("The selected time slot overlaps with an existing reservation");
+                }
 
-        // Create reservation
-        var reservation = _mapper.Map<Reservation>(request);
-        reservation.UserId = command.UserId;
-        reservation.Status = ReservationStatus.Active;
-        reservation.CreatedAt = DateTime.UtcNow;
+                // Check for blocked times
+                var hasBlockedTime = await _context.BlockedTimes
+                    .AnyAsync(bt =>
+                        bt.ResourceId == request.ResourceId &&
+                        bt.StartTime < request.EndTime &&
+                        bt.EndTime > request.StartTime,
+                        cancellationToken);
 
-        _context.Reservations.Add(reservation);
-        await _context.SaveChangesAsync(cancellationToken);
+                if (hasBlockedTime)
+                {
+                    throw new InvalidOperationException("The selected time slot is blocked for maintenance");
+                }
 
-        // Load navigation properties for response
-        await _context.Entry(reservation)
-         .Reference(r => r.User)
-  .LoadAsync(cancellationToken);
-        await _context.Entry(reservation)
-        .Reference(r => r.Resource)
-   .LoadAsync(cancellationToken);
+                // Create reservation
+                var reservation = _mapper.Map<Reservation>(request);
+                reservation.UserId = command.UserId;
+                reservation.Status = ReservationStatus.Active;
+                reservation.CreatedAt = DateTime.UtcNow;
 
-        return _mapper.Map<ReservationDto>(reservation);
+                _context.Reservations.Add(reservation);
+                await _context.SaveChangesAsync(cancellationToken);
+
+                await transaction.CommitAsync(cancellationToken);
+
+                // Load navigation properties for response (outside transaction)
+                await _context.Entry(reservation)
+                    .Reference(r => r.User)
+                    .LoadAsync(cancellationToken);
+                await _context.Entry(reservation)
+                    .Reference(r => r.Resource)
+                    .LoadAsync(cancellationToken);
+
+                return _mapper.Map<ReservationDto>(reservation);
+            }
+            catch (DbUpdateException ex) when (IsConcurrencyException(ex))
+            {
+                await transaction.RollbackAsync(cancellationToken);
+                throw new InvalidOperationException(
+                    "The selected time slot was just reserved by another user. Please try a different time.", ex);
+            }
+            catch
+            {
+                await transaction.RollbackAsync(cancellationToken);
+                throw;
+            }
+        });
+    }
+
+    private static bool IsConcurrencyException(DbUpdateException ex)
+    {
+        // Check for PostgreSQL serialization failure or deadlock
+        var message = ex.InnerException?.Message ?? ex.Message;
+        return message.Contains("could not serialize") ||
+               message.Contains("deadlock") ||
+               message.Contains("duplicate key") ||
+               message.Contains("23505"); // PostgreSQL unique violation
     }
 }
