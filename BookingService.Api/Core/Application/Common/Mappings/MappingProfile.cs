@@ -1,5 +1,4 @@
 using AutoMapper;
-using BookingService.Api.Core.Application.Features.Auth.DTOs;
 using BookingService.Api.Core.Application.Features.BlockedTimes.DTOs;
 using BookingService.Api.Core.Application.Features.Reservations.DTOs;
 using BookingService.Api.Core.Application.Features.Resources.DTOs;
@@ -11,11 +10,6 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        // User mappings
-        CreateMap<User, AuthResponse>()
-       .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()))
-       .ForMember(dest => dest.Token, opt => opt.Ignore());
-
         // Resource mappings
         CreateMap<Resource, ResourceDto>();
         CreateMap<CreateResourceRequest, Resource>();

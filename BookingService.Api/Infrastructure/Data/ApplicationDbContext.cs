@@ -13,6 +13,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Resource> Resources { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
     public DbSet<BlockedTime> BlockedTimes { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -28,6 +29,27 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.PasswordHash).IsRequired();
             entity.Property(e => e.Role).HasConversion<int>();
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("NOW()");
+        });
+
+        // RefreshToken configuration
+        modelBuilder.Entity<RefreshToken>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Token).IsRequired().HasMaxLength(256);
+            entity.HasIndex(e => e.Token).IsUnique();
+            entity.Property(e => e.CreatedByIp).HasMaxLength(45);
+            entity.Property(e => e.RevokedByIp).HasMaxLength(45);
+            entity.Property(e => e.ReplacedByToken).HasMaxLength(256);
+            entity.Property(e => e.ReasonRevoked).HasMaxLength(200);
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("NOW()");
+
+            entity.HasOne(e => e.User)
+                .WithMany(u => u.RefreshTokens)
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasIndex(e => e.UserId);
+            entity.HasIndex(e => e.ExpiresAt);
         });
 
         // Resource configuration

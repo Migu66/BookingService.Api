@@ -1,5 +1,3 @@
-using AutoMapper;
-using BookingService.Api.Core.Application.Common.Mappings;
 using BookingService.Api.Core.Application.Features.Auth.Commands;
 using BookingService.Api.Core.Application.Features.Auth.DTOs;
 using BookingService.Api.Core.Domain.Common;
@@ -8,6 +6,7 @@ using BookingService.Api.Infrastructure.Data;
 using BookingService.Api.Infrastructure.Services;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;
 
@@ -18,7 +17,7 @@ public class RegisterCommandHandlerTests : IDisposable
     private readonly ApplicationDbContext _context;
     private readonly Mock<IPasswordHasher> _passwordHasherMock;
     private readonly Mock<ITokenService> _tokenServiceMock;
-    private readonly IMapper _mapper;
+    private readonly Mock<IConfiguration> _configurationMock;
     private readonly RegisterCommandHandler _handler;
 
     public RegisterCommandHandlerTests()
@@ -33,20 +32,20 @@ public class RegisterCommandHandlerTests : IDisposable
         // Configurar mocks
         _passwordHasherMock = new Mock<IPasswordHasher>();
         _tokenServiceMock = new Mock<ITokenService>();
+        _configurationMock = new Mock<IConfiguration>();
 
-        // Configurar AutoMapper
-        var mapperConfig = new MapperConfiguration(cfg =>
-        {
-            cfg.AddProfile<MappingProfile>();
-        });
-        _mapper = mapperConfig.CreateMapper();
+        // Mock configuration section
+        var jwtSectionMock = new Mock<IConfigurationSection>();
+        jwtSectionMock.Setup(x => x["AccessTokenExpiryMinutes"]).Returns("15");
+        jwtSectionMock.Setup(x => x["RefreshTokenExpiryDays"]).Returns("7");
+        _configurationMock.Setup(x => x.GetSection("JwtSettings")).Returns(jwtSectionMock.Object);
 
         // Crear handler
         _handler = new RegisterCommandHandler(
             _context,
             _passwordHasherMock.Object,
             _tokenServiceMock.Object,
-            _mapper);
+            _configurationMock.Object);
     }
 
     public void Dispose()
@@ -70,10 +69,21 @@ public class RegisterCommandHandlerTests : IDisposable
             .Returns("hashedPassword123");
 
         _tokenServiceMock
-            .Setup(x => x.GenerateToken(It.IsAny<int>(), "newuser@example.com", "User"))
+            .Setup(x => x.GenerateAccessToken(It.IsAny<int>(), "newuser@example.com", "User"))
             .Returns("new-user-jwt-token");
 
-        var command = new RegisterCommand(registerRequest);
+        _tokenServiceMock
+            .Setup(x => x.GenerateRefreshToken(It.IsAny<int>(), It.IsAny<string>()))
+            .Returns(new RefreshToken
+            {
+                Token = "refresh-token",
+                UserId = 1,
+                ExpiresAt = DateTime.UtcNow.AddDays(7),
+                CreatedAt = DateTime.UtcNow,
+                CreatedByIp = "127.0.0.1"
+            });
+
+        var command = new RegisterCommand(registerRequest, "127.0.0.1");
 
         // Act
         var result = await _handler.Handle(command, CancellationToken.None);
@@ -82,7 +92,8 @@ public class RegisterCommandHandlerTests : IDisposable
         result.Should().NotBeNull();
         result.Email.Should().Be("newuser@example.com");
         result.Name.Should().Be("New User");
-        result.Token.Should().Be("new-user-jwt-token");
+        result.AccessToken.Should().Be("new-user-jwt-token");
+        result.RefreshToken.Should().Be("refresh-token");
 
         // Verificar que el usuario se guardó en la base de datos
         var savedUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == "newuser@example.com");
@@ -114,11 +125,11 @@ public class RegisterCommandHandlerTests : IDisposable
         var registerRequest = new RegisterRequest
         {
             Name = "New User",
-            Email = "existing@example.com", // Email duplicado
+            Email = "existing@example.com",
             Password = "password123"
         };
 
-        var command = new RegisterCommand(registerRequest);
+        var command = new RegisterCommand(registerRequest, "127.0.0.1");
 
         // Act
         Func<Task> act = async () => await _handler.Handle(command, CancellationToken.None);
@@ -144,10 +155,21 @@ public class RegisterCommandHandlerTests : IDisposable
             .Returns("hashedPassword");
 
         _tokenServiceMock
-            .Setup(x => x.GenerateToken(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>()))
+            .Setup(x => x.GenerateAccessToken(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>()))
             .Returns("token");
 
-        var command = new RegisterCommand(registerRequest);
+        _tokenServiceMock
+            .Setup(x => x.GenerateRefreshToken(It.IsAny<int>(), It.IsAny<string>()))
+            .Returns(new RefreshToken
+            {
+                Token = "refresh-token",
+                UserId = 1,
+                ExpiresAt = DateTime.UtcNow.AddDays(7),
+                CreatedAt = DateTime.UtcNow,
+                CreatedByIp = "127.0.0.1"
+            });
+
+        var command = new RegisterCommand(registerRequest, "127.0.0.1");
 
         // Act
         await _handler.Handle(command, CancellationToken.None);
@@ -155,8 +177,8 @@ public class RegisterCommandHandlerTests : IDisposable
         // Assert
         var savedUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == "defaults@example.com");
         savedUser.Should().NotBeNull();
-        savedUser!.Role.Should().Be(UserRole.User); // Rol por defecto es User
-        savedUser.IsActive.Should().BeTrue(); // Usuario activo por defecto
+        savedUser!.Role.Should().Be(UserRole.User);
+        savedUser.IsActive.Should().BeTrue();
         savedUser.CreatedAt.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(5));
     }
 
@@ -176,10 +198,21 @@ public class RegisterCommandHandlerTests : IDisposable
             .Returns("hashedPassword");
 
         _tokenServiceMock
-            .Setup(x => x.GenerateToken(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>()))
+            .Setup(x => x.GenerateAccessToken(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>()))
             .Returns("token");
 
-        var command = new RegisterCommand(registerRequest);
+        _tokenServiceMock
+            .Setup(x => x.GenerateRefreshToken(It.IsAny<int>(), It.IsAny<string>()))
+            .Returns(new RefreshToken
+            {
+                Token = "refresh-token",
+                UserId = 1,
+                ExpiresAt = DateTime.UtcNow.AddDays(7),
+                CreatedAt = DateTime.UtcNow,
+                CreatedByIp = "127.0.0.1"
+            });
+
+        var command = new RegisterCommand(registerRequest, "127.0.0.1");
 
         // Act
         await _handler.Handle(command, CancellationToken.None);
@@ -204,17 +237,28 @@ public class RegisterCommandHandlerTests : IDisposable
             .Returns("hashedPassword");
 
         _tokenServiceMock
-            .Setup(x => x.GenerateToken(It.IsAny<int>(), "tokentest@example.com", "User"))
+            .Setup(x => x.GenerateAccessToken(It.IsAny<int>(), "tokentest@example.com", "User"))
             .Returns("generated-token");
 
-        var command = new RegisterCommand(registerRequest);
+        _tokenServiceMock
+            .Setup(x => x.GenerateRefreshToken(It.IsAny<int>(), It.IsAny<string>()))
+            .Returns(new RefreshToken
+            {
+                Token = "refresh-token",
+                UserId = 1,
+                ExpiresAt = DateTime.UtcNow.AddDays(7),
+                CreatedAt = DateTime.UtcNow,
+                CreatedByIp = "127.0.0.1"
+            });
+
+        var command = new RegisterCommand(registerRequest, "127.0.0.1");
 
         // Act
         await _handler.Handle(command, CancellationToken.None);
 
         // Assert
         _tokenServiceMock.Verify(
-            x => x.GenerateToken(It.IsAny<int>(), "tokentest@example.com", "User"),
+            x => x.GenerateAccessToken(It.IsAny<int>(), "tokentest@example.com", "User"),
             Times.Once);
     }
 }
