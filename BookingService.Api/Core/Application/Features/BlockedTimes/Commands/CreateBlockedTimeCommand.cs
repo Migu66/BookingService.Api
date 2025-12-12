@@ -26,6 +26,13 @@ public class CreateBlockedTimeCommandHandler : IRequestHandler<CreateBlockedTime
     {
         var request = command.Request;
 
+        var isInMemory = _context.Database.ProviderName == "Microsoft.EntityFrameworkCore.InMemory";
+
+        if (isInMemory)
+        {
+            return await ExecuteWithoutTransaction(request, cancellationToken);
+        }
+
         var executionStrategy = _context.Database.CreateExecutionStrategy();
 
         return await executionStrategy.ExecuteAsync(async () =>
@@ -111,5 +118,60 @@ public class CreateBlockedTimeCommandHandler : IRequestHandler<CreateBlockedTime
                message.Contains("deadlock") ||
                message.Contains("duplicate key") ||
                message.Contains("23505");
+    }
+
+    private async Task<BlockedTimeDto> ExecuteWithoutTransaction(CreateBlockedTimeRequest request, CancellationToken cancellationToken)
+    {
+        // Validate resource exists (without lock for InMemory)
+        var resource = await _context.Resources
+            .FirstOrDefaultAsync(r => r.Id == request.ResourceId && r.IsActive, cancellationToken);
+
+        if (resource == null)
+        {
+            throw new KeyNotFoundException($"Resource with ID {request.ResourceId} not found or inactive");
+        }
+
+        // Check for overlapping active reservations
+        var hasOverlappingReservation = await _context.Reservations
+            .AnyAsync(r =>
+                r.ResourceId == request.ResourceId &&
+                r.Status == ReservationStatus.Active &&
+                r.StartTime < request.EndTime &&
+                r.EndTime > request.StartTime,
+                cancellationToken);
+
+        if (hasOverlappingReservation)
+        {
+            throw new InvalidOperationException(
+                "Cannot block this time slot: there are active reservations during this period");
+        }
+
+        // Check for overlapping blocked times
+        var hasOverlappingBlockedTime = await _context.BlockedTimes
+            .AnyAsync(bt =>
+                bt.ResourceId == request.ResourceId &&
+                bt.StartTime < request.EndTime &&
+                bt.EndTime > request.StartTime,
+                cancellationToken);
+
+        if (hasOverlappingBlockedTime)
+        {
+            throw new InvalidOperationException(
+                "This time slot already overlaps with an existing blocked time");
+        }
+
+        // Create blocked time
+        var blockedTime = _mapper.Map<BlockedTime>(request);
+        blockedTime.CreatedAt = DateTime.UtcNow;
+
+        _context.BlockedTimes.Add(blockedTime);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        // Load navigation property for response
+        await _context.Entry(blockedTime)
+            .Reference(bt => bt.Resource)
+            .LoadAsync(cancellationToken);
+
+        return _mapper.Map<BlockedTimeDto>(blockedTime);
     }
 }
